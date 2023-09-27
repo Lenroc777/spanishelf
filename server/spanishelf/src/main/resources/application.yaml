@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: your database url
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    database: mysql
+okta:
+  oauth2:
+    client-id: your id
+    issuer: your issuer
+
+#####
+#
+# HTTPS configuration
+#
+#####
+# Server web port
+server:
+  port: 8443
+  # Enable HTTPS support (only accept HTTPS requests)
+  ssl:
+    enabled: true
+    # Alias that identifies the key in the key store
+    key-alias: lenroc
+    # Keystore location
+    key-store: classpath:lenroc-keystore.p12
+    # Keystore password
+    key-store-password: secret
+    # Keystore format
+    key-store-type: PKCS12
+stripe:
+  key:
+    secret: your stripe secret key
